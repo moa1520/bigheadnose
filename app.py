@@ -55,6 +55,7 @@ def predict():
         imgs = []
         imgs.append(image)
         imgs = np.array(imgs)
+
         result = model.predict(imgs)
 
         print("봄: " + str(round(result[0][0] * 100, 2)) + "%")
