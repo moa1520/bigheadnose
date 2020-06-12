@@ -18,18 +18,6 @@ app = Flask(__name__)
 # client = boto3.client('s3')
 # client.download_file(bucket_name, KEY, FILE_PATH)
 
-def load_image_url(url):
-    response = requests.get(url)
-    img = BytesIO.open_image(BytesIO(response.content))
-    return img
-
-def load_image_bytes(raw_bytes):
-    img = BytesIO.open_image(BytesIO(raw_bytes))
-    return img
-
-def predict(img):
-    return None
-
 @app.route('/', methods=['GET'])
 def index():
     return "<h1>캡스톤 디자인</h1>"
