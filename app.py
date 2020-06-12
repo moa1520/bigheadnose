@@ -50,7 +50,7 @@ def predict():
         image = cv2.resize(image, (224, 224))
         #
 
-        image = image - .5
+        image = image / 255 - .5
 
         imgs = []
         imgs.append(image)
