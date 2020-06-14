@@ -1,22 +1,13 @@
 from tensorflow.keras.models import load_model
 from flask import Flask, request
-import requests
 import base64
 from PIL import Image
 from io import BytesIO
 import numpy as np
 import cv2
 import json
-# import boto3
 
 app = Flask(__name__)
-
-# bucket_name = 'headnose'
-# KEY = 'model_90.h5'
-# FILE_PATH = './model/model_09.h5'
-#
-# client = boto3.client('s3')
-# client.download_file(bucket_name, KEY, FILE_PATH)
 
 @app.route('/', methods=['GET'])
 def index():
@@ -25,16 +16,6 @@ def index():
 @app.route('/ping', methods=['GET'])
 def ping():
     return "pong"
-
-@app.route('/img_test', methods=['POST'])
-def img_test():
-    if request.method == 'POST':
-        data = request.json
-        image_code = base64.b64decode(str(data['img']))
-        image = Image.open(BytesIO(image_code))
-        image = np.array(image)
-
-    return "hihi"
 
 @app.route('/predict', methods=['POST'])
 def predict():
