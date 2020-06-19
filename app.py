@@ -47,6 +47,8 @@ def predict():
             'winter': round(result[0][3] * 100, 2)
         }
 
+        print(res)
+
         json_data = json.dumps(res)
     return json_data
 
