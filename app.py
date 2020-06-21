@@ -54,5 +54,5 @@ def predict():
 
 
 if __name__ == '__main__':
-    model = load_model('./model/final_model.h5')
+    model = load_model('./model/model_90.h5')
     app.run(host="0.0.0.0", port=5000)
