@@ -2,7 +2,7 @@
 ### 퍼스널 컬러 추천 어플리케이션
 
 --- 모델 제작 코드 ---
-
+```python
 from keras.applications import ResNet50
 from keras.layers import Dense, Input, Activation
 from keras.models import Model
@@ -253,3 +253,5 @@ print("봄 : " + str(round(y[0][0] * 100,2)) + "%")
 print("여름 : " + str(round(y[0][1] * 100,2)) + "%")
 print("가을 : " + str(round(y[0][2] * 100,2)) + "%")
 print("겨울 : " + str(round(y[0][3] * 100,2)) + "%")
+
+```
